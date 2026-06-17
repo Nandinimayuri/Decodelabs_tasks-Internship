@@ -4,13 +4,13 @@ About the Project:
 In this assignment,I worked on cleaning and preparing a sales dataset for machine learning.The main goal was to handle missing values, identify outliers,and create new features from the existing data columns.
 
 Tasks Completed:
-1. Handling Missing Values
+1.Handling Missing Values
 I checked the dataset for missing values and filled them using appropriate methods to make the data complete.
 
-2. Outlier Detection
+2.Outlier Detection
 I used the Z-Score method to find outliers in numerical columns and removed those records from the dataset.
 
-3. Feature Engineering
+3.Feature Engineering
 I created new features from the existing columns:
 i. DeliveryDays
 ii. NetRevenue
