@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.model_selection import train_test_split,GridSearchCV
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
@@ -8,7 +8,7 @@ from sklearn.metrics import precision_score,recall_score,roc_auc_score,classific
 from imblearn.over_sampling import SMOTE
 from imblearn.pipeline import Pipeline
 df = pd.read_excel(r"C:\Users\manas\OneDrive\Desktop\Decodelabs project\Dataset\Product-Sales-Region.xlsx")
-print("Dataset Shape:", df.shape)
+print("Dataset Shape:",df.shape)
 print(df.head())
 #missing values
 df=df.dropna()
@@ -19,10 +19,10 @@ for col in date_cols:
     df[col]=df[col].astype("int64")
 #targetted col
 y=df["Returned"]
-X=df.drop("Returned", axis=1)
+X=df.drop("Returned",axis=1)
 #categorical data to numeric
-X=pd.get_dummies(X, drop_first=True)
-print("Features Shape:", X.shape)
+X=pd.get_dummies(X,drop_first=True)
+print("Features Shape:",X.shape)
 
 X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.2,random_state=42,stratify=y)
 
@@ -47,7 +47,7 @@ print("Precision:",precision_score(y_test, rf_pred))
 print("Recall:",recall_score(y_test, rf_pred))
 print("ROC-AUC:",roc_auc_score(y_test, rf_prob))
 #hyperparameter tuning
-param_grid={"model__n_estimators": [100, 200],"model__max_depth": [5, 10, None],"model__min_samples_split":[2, 5]}
+param_grid={"model__n_estimators":[100, 200],"model__max_depth":[5, 10, None],"model__min_samples_split":[2, 5]}
 grid=GridSearchCV(rf_pipeline,param_grid,cv=3,scoring="roc_auc",n_jobs=-1)
 grid.fit(X_train, y_train)
 
