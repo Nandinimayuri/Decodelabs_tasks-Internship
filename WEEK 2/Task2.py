@@ -7,7 +7,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import precision_score,recall_score,roc_auc_score,classification_report,confusion_matrix
 from imblearn.over_sampling import SMOTE
 from imblearn.pipeline import Pipeline
-df = pd.read_excel(r"C:\Users\manas\OneDrive\Desktop\Decodelabs project\Dataset\Product-Sales-Region.xlsx")
+df = pd.read_excel("Product-Sales-Region.xlsx")
 print("Dataset Shape:",df.shape)
 print(df.head())
 #missing values
