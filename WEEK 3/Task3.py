@@ -5,7 +5,7 @@ from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 #loading dataset
-df=pd.read_excel(r"C:\Users\manas\OneDrive\Desktop\Decodelabs project\Dataset\Product-Sales-Region.xlsx")
+df=pd.read_excel("Product-Sales-Region.xlsx")
 #droping date cols
 df=df.drop(["Date", "OrderDate", "DeliveryDate"], axis=1,errors='ignore')
 #converting text to numeric
